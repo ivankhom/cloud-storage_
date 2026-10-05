@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+db.sqlite3
+storage_data/
+staticfiles/
+frontend_build/
+.env
+*.log
+
+# production-шаблон окружения хранится в репозитории
+!deploy/.env.production

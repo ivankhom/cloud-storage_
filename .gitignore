@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+
+# Django
+db.sqlite3
+backend/storage_data/
+backend/staticfiles/
+backend/frontend_build/
+
+# Node
+node_modules/
+frontend/dist/
+
+# Окружение
+.env
+.env.local
+!backend/deploy/.env.production
+
+# Логи, IDE, ОС
+*.log
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

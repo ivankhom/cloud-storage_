@@ -1,0 +1,17 @@
+[Unit]
+Description=Cloud Storage (Django + Gunicorn)
+After=network.target postgresql.service
+Requires=postgresql.service
+
+[Service]
+User=cloud
+Group=cloud
+WorkingDirectory=/opt/cloud-storage/backend
+ExecStart=/opt/cloud-storage/backend/venv/bin/gunicorn config.wsgi:application \
+    --bind 127.0.0.1:8000 --workers 3 --timeout 300 \
+    --access-logfile - --error-logfile -
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
